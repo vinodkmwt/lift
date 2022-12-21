@@ -1,0 +1,62 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    border: 1px solid black;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.lift-area {
+    border: 1px solid black;
+    height: 100%;
+    width: 30%;
+    /* background-color: rgb(255, 230, 230); */
+    box-sizing: border-box;
+}
+
+.other-area {
+    border: 1px solid black;
+    height: 100%;
+    width: 70%;
+    /* background-color: rgb(215, 255, 215); */
+    display: flex;
+    flex-direction: column;
+}
+
+.other-area div {
+    height: 25%;
+    border-bottom: 1px solid black;
+}
+
+.lift-area #lift {
+    border: 1px solid black;
+    height: 25%;
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    position: relative;
+    top: 450px;
+    /* animation-name: example;
+    animation-duration: 2s; */
+}
+
+/* @keyframes example {
+    0%   {top:0px;}
+    100%  {top:150px;}
+  } */
+
+.floor {
+    text-align: center
+}
+
+.floor button {
+    position: relative;
+    top: 30%;
+    padding: 1rem;
+    font-size: larger;
+}

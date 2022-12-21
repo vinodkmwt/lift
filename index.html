@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lift</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+    <main>
+        <div class="lift-area">
+            <div id="lift" data-floor="0"></div>
+        </div>
+        <div class="other-area">
+            <div class="floor"><button onclick="lift(3)">3</button></div>
+            <div class="floor"><button onclick="lift(2)">2</button></div>
+            <div class="floor"><button onclick="lift(1)">1</button></div>
+            <div class="floor"><button onclick="lift(0)">G</button></div>
+        </div>
+    </main>
+</body>
+<script>
+    function lift(p) {
+        const totalFloors = 4;
+        const elem = this.document.getElementById("lift");
+        const height = (elem.clientHeight + elem.offsetHeight) / 2;
+
+        let id = null;
+        let posNow = elem.style.top.split('px')[0];
+        let currentFloor = Number(elem.getAttribute('data-floor'));
+        if (!posNow) {posNow = 0;}
+        let posStart = posNow;
+        let posEnd = (totalFloors - p - 1) * (height);
+
+        elem.setAttribute('data-floor', p);
+        clearInterval(id);
+        id = setInterval(frame, 1);
+        
+        function frame() {
+            if (posStart == posEnd) {
+                clearInterval(id);
+            } else {
+                if (posStart > posEnd) {
+                    posStart--;
+                    elem.style.top = posStart + "px";
+                } else {
+                    posStart++;
+                    elem.style.top = posStart + "px";
+                }
+            }
+        }
+    }
+</script>
+
+</html>
