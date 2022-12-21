@@ -34,7 +34,7 @@
         let currentFloor = Number(elem.getAttribute('data-floor'));
         if (!posNow) {posNow = 0;}
         let posStart = posNow;
-        let posEnd = (totalFloors - p - 1) * (height);
+        let posEnd = (totalFloors - p - 1) * (height); 
 
         elem.setAttribute('data-floor', p);
         clearInterval(id);
