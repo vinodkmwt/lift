@@ -36,12 +36,12 @@
         let posStart = posNow;
         let posEnd = (totalFloors - p - 1) * (height);
 
-        elem.setAttribute('data-floor', p);
         clearInterval(id);
         id = setInterval(frame, 1);
-        
+
         function frame() {
             if (posStart == posEnd) {
+                elem.setAttribute('data-floor', p);
                 btn.removeAttribute('disabled');
                 clearInterval(id);
             } else {
